@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Service Kits</title>
+</head>
+
+<body>
+  <header>
+    <h1>Service Kits</h1>
+  </header>
+
+  <nav>
+    <a href="index.html"><img src="./images/logo.jpg" width="100px"/></a>
+
+    <div class="nav-group">
+      <!--<div class="nav-heading">Site Pages</div>-->
+      <a href="about.html">About</a>
+      <a href="limitedOffer.html">Offers</a>
+      <a href="cart.html" class="cart-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+
+    <div class="nav-group">
+      <!--<div class="nav-heading">Products</div>-->
+      <a href="tires.html">Tires</a>
+      <a href="careCare.html">Car Care</a>
+      <a href="serviceKit.html">Service Kits</a>
+      <a href="performanceUpgrade.html">Performance</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="card">
+      <p>Ensure your vehicle runs smooths and as reliable as possible with our maintainance products</p>
+    </div>
+
+    <!-- Product Grid Section -->
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="card">
+        <img src="images/engine-oil.jpg" alt="Oil Filter">
+        <div class="check-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <p>Stock No: #S100</p>
+        <p>R500</p>
+        <h4>High performance engine oil</h4>
+        <p class="location">Allows for a smooth running engine</p>
+        <p class="code">Code: T-A1</p>
+        <button class="fav"><i class="far fa-heart"></i></button>
+        <button class="add-to-cart" data-id="S100" data-name="High performance engine oil" data-price="500">Add to Cart</button>
+
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="card">
+        <img src="images/oil-filter.jpg" alt="Filters oil">
+        <div class="check-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <p>Stock No: #S101</p>
+        <p>R1500</p>
+        <h4>Complete kit to service oil filter</h4>
+        <p class="location">Includes bucket</p>
+        <p class="code">Code: T-B2</p>
+        <button class="fav"><i class="far fa-heart"></i></button>
+        <button class="add-to-cart" data-id="S101" data-name="Service Kit" data-price="1500">Add to Cart</button>
+
+      </div>
+
+  </main>
+  <footer>&copy; Precision Auto</footer>
+</body>
+</html>
+<!--
+<script>
+  // Initialize cart in localStorage if not present
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const product = {
+        id: button.dataset.id,
+        name: button.dataset.name,
+        price: parseFloat(button.dataset.price),
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    });
+  });
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = count;
+  }
+
+  updateCartCount(); // initialize count on load
+</script>
+-->

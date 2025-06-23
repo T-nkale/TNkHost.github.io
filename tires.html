@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <title>Tires</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Tires</h1>
+    </header>
+
+    <nav>
+      <a href="index.html"><img src="./images/logo.jpg" width="100px"/></a>
+      <div class="nav-group">
+        <!--<div class="nav-heading">Site Pages</div>-->
+        <a href="about.html">About</a>
+        <a href="limitedOffer.html">Offers</a>
+        <a href="cart.html" class="cart-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <!--<div class="nav-heading">Products</div>-->
+        <a href="tires.html">Tires</a>
+        <a href="careCare.html">Car Care</a>
+        <a href="serviceKit.html">Service Kits</a>
+        <a href="performanceUpgrade.html">Performance</a>
+      </div>
+    </nav>
+
+
+    <main>
+      <div class="card">
+        <p>Browse our range of premium tires for all vehicles and weather conditions. Quality, safety, and performance guaranteed.</p>
+      </div>
+
+      <!-- Product Grid Section -->
+      <div class="product-grid">
+        <!-- Product Card 1 -->
+        <div class="card">
+          <img src="images/all-season-tires.jpg" alt="Premium All-Season Tire">
+          <div class="check-icon"><i class="fas fa-check-circle"></i></div>
+
+          <p>Stock No: #T102</p>
+          <h4>Michelin All-Season Radial</h4>
+          <p class="location">Size: 205/55R16</p>
+          <p class="code">Code: T-A1</p>
+
+          <button class="fav"><i class="far fa-heart"></i></button>
+          <button class="add-to-cart" data-id="T102" data-name="Michelin All-Season Radial" data-size="205/55R16" data-code="T-A1">Add to Cart</button>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="card">
+          <img src="images/snow-tires.jpg" alt="Winter Snow Tire">
+          <div class="check-icon"><i class="fas fa-check-circle"></i></div>
+        
+          <p>Stock No: #T205</p>
+          <h4>Bridgestone WinterForce</h4>
+          <p class="location">Size: 215/60R17</p>
+          <p class="code">Code: T-B2</p>
+        
+          <button class="fav"><i class="far fa-heart"></i></button>
+          <button class="add-to-cart" data-id="T205" data-name="Bridgestone WinterForce" data-size="215/60R17" data-code="T-B2">Add to Cart</button>
+        </div>
+
+      </div>
+    </main>
+
+    <script>
+        const cartContainer = document.getElementById('cart-items');
+        const totalPriceEl = document.getElementById('total-price');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+          let total = 0;
+          cart.forEach(item => {
+            total += item.price * item.quantity;
+            cartContainer.innerHTML += `
+              <div>
+                <strong>${item.name}</strong> (x${item.quantity}) - R${item.price * item.quantity}
+              </div>
+            `;
+          });
+          totalPriceEl.textContent = `Total: R${total}`;
+        }
+
+        function checkout() {
+          alert('Proceeding to checkout...');
+          // Add checkout logic or redirect
+        }
+      </script>
+
+    <footer>&copy; Precision Auto</footer>
+  </body>
+</html>
+
+<script>
+  // Initialize cart in localStorage if not present
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const product = {
+        id: button.dataset.id,
+        name: button.dataset.name,
+        price: parseFloat(button.dataset.price),
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    });
+  });
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = count;
+  }
+
+  updateCartCount(); // initialize count on load
+</script>
+
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Performance Upgrades</title>
+</head>
+
+<body>
+  <header>
+    <h1>Performance Upgrades</h1>
+  </header>
+
+  <nav>
+    <a href="index.html"><img src="./images/logo.jpg" width="100px"/></a>
+    <div class="nav-group">
+      <!--<div class="nav-heading">Site Pages</div>-->
+      <a href="about.html">About</a>
+      <a href="limitedOffer.html">Offers</a>
+      <a href="cart.html" class="cart-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+
+    <div class="nav-group">
+      <!--<div class="nav-heading">Products</div>-->
+      <a href="tires.html">Tires</a>
+      <a href="careCare.html">Car Care</a>
+      <a href="serviceKit.html">Service Kits</a>
+      <a href="performanceUpgrade.html">Performance</a>
+    </div>
+  </nav>
+
+
+
+  <main>
+    <div class="card">
+      <p>Increase horsepower, enhance handling, and fine-tune your car’s performance with our professional-grade upgrade parts.</p>
+    </div>
+
+    <!-- Product Grid Section -->
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="card">
+        <img src="images/downpipe.jpg" alt="Downpipe">
+        <div class="check-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <p>Stock No: #P100</p>
+        <p>R1 200</p>
+        <h4>High performance downpipe</h4>
+        <p class="location">Allows for a smoother flow of exhuast gases</p>
+        <p class="code">Code: T-A1</p>
+        <button class="fav"><i class="far fa-heart"></i></button>
+        <button class="add-to-cart" data-id="P100" data-name="High performance downpipe" data-price="1200">Add to Cart</button>
+
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="card">
+        <img src="images/valvetronic-exhaust.jpg" alt="Complete valved exhuast">
+        <div class="check-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <p>Stock No: #P101</p>
+        <p>R15 000</p>
+        <h4>Full performace exhuast system</h4>
+        <p class="location">Enhance sound and improve performance</p>
+        <p class="code">Code: T-B2</p>
+        <button class="fav"><i class="far fa-heart"></i></button>
+        <button class="add-to-cart" data-id="P101" data-name="Full performance exhuast system" data-price="15000">Add to Cart</button>
+
+      </div>
+
+
+  </main>
+  <footer>&copy; Precision Auto</footer>
+</body>
+</html>
+
+<script>
+  // Initialize cart in localStorage if not present
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const product = {
+        id: button.dataset.id,
+        name: button.dataset.name,
+        price: parseFloat(button.dataset.price),
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    });
+  });
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = count;
+  }
+
+  updateCartCount(); // initialize count on load
+</script>

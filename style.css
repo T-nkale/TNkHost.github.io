@@ -1,0 +1,380 @@
+/* Reset and base styles */
+
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+*/
+
+/* Navigation styles */
+nav {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Top navigation section */
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navItem img {
+  object-fit: contain;
+}
+
+/* Search bar styling */
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: #fff;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  width: 200px;
+}
+
+.searchIcon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Limited offer styling */
+.limitedOffer {
+  color: #d32f2f;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Bottom menu */
+/*
+.navBottom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.menuItem {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s;
+  text-decoration: none;
+  color: #333;
+}
+
+.menuItem:hover {
+  color: #0077cc;
+}
+*/
+
+/* Image slider area */
+.container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sliderImg {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sliderImg:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive styling 
+@media screen and (max-width: 768px) {
+  .navTop {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .navBottom {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+} */
+/*
+.menuItem {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s;
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+}
+
+.menuItem:hover {
+  color: #0077cc;
+}
+*/
+/*
+.cartIcon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-left: 5px;
+} 
+*/
+
+/* Tabs styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header, footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+}
+
+h1 {
+  color: #1e88e5;
+  margin-bottom: 1rem;
+}
+
+p, ul {
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- NAVIGATION BAR --- */
+
+nav {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  padding: 10 rem;
+  flex-wrap: wrap;
+}
+
+.nav-logo img {
+  height: 100px;
+  width: auto;
+  margin-right: 2rem;
+}
+
+.nav-content {
+  display: flex;
+  gap: 3rem;
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-heading {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav-group a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0.25rem 0;
+  padding: 0.3rem 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-group a:hover {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+/* Optional: make it more responsive */
+/* 
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .nav-group {
+    align-items: flex-start;
+  }
+}
+*/
+
+
+/* Optional: style the Home button if needed */
+/*
+.nav-home {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1e88e5;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-home:hover {
+  background-color: #1565c0;
+}
+*/
+
+/*=== Product card style===*/
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.card h4 {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+.card .location {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.card .code {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.card .fav {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #c62828;
+  cursor: pointer;
+}
+
+.card .check-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #4caf50;
+  font-size: 1.2rem;
+}
+
+
+/*=====Social media icons=====*/
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+/*=== Cart Icon ===*/
+
+.cart-icon {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-left: 0;
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+
